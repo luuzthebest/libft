@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hounajar <hounajar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 16:52:28 by hounajar          #+#    #+#             */
-/*   Updated: 2024/11/17 17:02:34 by hounajar         ###   ########.fr       */
+/*   Created: 2024/11/17 17:03:29 by hounajar          #+#    #+#             */
+/*   Updated: 2024/11/18 10:07:25 by hounajar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	*ft_memset(void *s, int n, size_t c)
 {
-	size_t	i;
-	size_t	dst_len;
-	size_t	src_len;
+	unsigned char	*s2;
 
-	src_len = ft_strlen(src);
-	dst_len = ft_strlen(dst);
-	i = 0;
-	if (size == 0 || size <= dst_len)
+	s2 = (unsigned char *)s;
+	while (c--)
 	{
-		return (src_len + dst_len);
+		*s2++ = (unsigned char)n;
 	}
-	while (i < size - dst_len - 1 && src[i])
-	{
-		dst[dst_len + i] = src[i];
-		i++;
-	}
-	dst[dst_len + i] = '\0';
-	printf("%s", dst);
-	return (src_len + dst_len);
+	return (s);
 }
