@@ -6,7 +6,7 @@
 /*   By: hounajar <hounajar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 10:31:21 by hounajar          #+#    #+#             */
-/*   Updated: 2024/11/18 11:00:41 by hounajar         ###   ########.fr       */
+/*   Updated: 2024/11/19 18:52:17 by hounajar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
+	unsigned char	*d;
+
+	d = (unsigned char *)dest;
 	while (n--)
 	{
 		*(unsigned char *)dest++ = *(unsigned char *)src++;
 	}
-	return (dest);
+	return (d);
 }

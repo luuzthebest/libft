@@ -6,36 +6,38 @@
 /*   By: hounajar <hounajar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 11:44:41 by hounajar          #+#    #+#             */
-/*   Updated: 2024/11/19 00:51:07 by hounajar         ###   ########.fr       */
+/*   Updated: 2024/11/19 01:11:10 by hounajar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-void *ft_memmove(void *dest, const void *src, size_t n) {
-    unsigned char *d = (unsigned char *)dest;
-    const unsigned char *s = (const unsigned char *)src;
-    
-    // Handle memory move when dest is same as src or no overlap
-    if (d == s || n == 0)
-        return dest;
-    
-    // If dest and src do not overlap, just copy from front to back
-    if (d < s) {
-        while (n--) {
-            *d++ = *s++;
-        }
-    }
-    // If memory areas overlap, move from back to front (reverse)
-    else {
-        d = d + n - 1;
-        s = s + n - 1;
-        while (n--) {
-            *d-- = *s--;
-        }
-    }
-    
-    return dest;
+
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	unsigned char		*d;
+	const unsigned char	*s;
+
+	s = (const unsigned char *)src;
+	d = (unsigned char *)dest;
+	if (d == s || n == 0)
+		return (dest);
+	if (d < s)
+	{
+		while (n--)
+		{
+			*d++ = *s++;
+		}
+	}
+	else
+	{
+		d = d + n - 1;
+		s = s + n - 1;
+		while (n--)
+		{
+			*d-- = *s--;
+		}
+	}
+	return (dest);
 }
 // int main() {
 //     // Test case 1: Basic memory move with non-overlapping memory
