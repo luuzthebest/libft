@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hounajar <hounajar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 10:09:45 by hounajar          #+#    #+#             */
-/*   Updated: 2024/11/20 16:55:10 by hounajar         ###   ########.fr       */
+/*   Created: 2024/11/20 17:14:56 by hounajar          #+#    #+#             */
+/*   Updated: 2024/11/20 18:56:58 by hounajar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (c == '\0')
-		return ((char *)str);
-	while (*str)
+	char	*mapped;
+	size_t	i;
+
+	i = 0;
+	if (!s || !f)
+		return (ft_strdup(""));
+	mapped = malloc(strlen(s)+1);
+	if (mapped == NULL)
+		return (NULL);
+	while (s[i])
 	{
-		if (*str == c)
-		{
-			return ((char *)str);
-		}
-		str++;
+		mapped[i] = f(i, s[i]);
+		i++;
 	}
-	return (NULL);
+	mapped[i] = '\0';
+	return (mapped);
 }
