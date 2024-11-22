@@ -1,7 +1,4 @@
-CC = cc -Wall -Wextra -Werror
-
-RM = rm -rf
-
+CC = cc
 
 all:
 
