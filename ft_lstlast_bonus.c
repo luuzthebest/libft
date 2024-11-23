@@ -6,7 +6,7 @@
 /*   By: hounajar <hounajar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 21:31:45 by hounajar          #+#    #+#             */
-/*   Updated: 2024/11/21 21:33:07 by hounajar         ###   ########.fr       */
+/*   Updated: 2024/11/22 09:18:53 by hounajar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_lstlast(t_list *lst)
 	t_list	*p;
 
 	if (lst == NULL)
-		return (0);
+		return ;
 	p = lst;
 	while (p != NULL)
 	{

@@ -6,7 +6,7 @@
 /*   By: hounajar <hounajar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 21:35:33 by hounajar          #+#    #+#             */
-/*   Updated: 2024/11/21 22:20:46 by hounajar         ###   ########.fr       */
+/*   Updated: 2024/11/22 09:18:13 by hounajar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	t_list	*p;
 
 	if (lst == NULL)
-		return (0);
+		return ;
 	p = lst;
 	while (p->next != NULL)
-		p = p->next;	
+		p = p->next;
 	p->next = new;
 }
