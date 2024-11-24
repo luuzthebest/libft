@@ -22,9 +22,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!s1 || !set)
 		return (NULL);
 	len = ft_strlen(s1);
-	while (ft_strchr(set, s1[i]) && i <= len)
+	while (ft_strchr(set, s1[i]) && i < len)
 		i++;
-	if (i >= len || len == 0)
+	if (i >= len || *s1 == '\0')
 		return (ft_strdup(""));
 	while (ft_strrchr(set, s1[len - 1]))
 		len--;

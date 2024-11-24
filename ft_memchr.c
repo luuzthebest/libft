@@ -12,17 +12,12 @@
 
 #include <stdio.h>
 
-void	*memrchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	*scpy;
-
-	scpy = (unsigned char *)s;
 	while (n--)
 	{
-		if (*(unsigned char *)s == c)
-		{
-			return (scpy);
-		}
+		if (*(unsigned char *)s == (unsigned char)c)
+			return ((unsigned char *)s);
 		s++;
 	}
 	return (NULL);

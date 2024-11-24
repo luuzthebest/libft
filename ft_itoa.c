@@ -17,7 +17,9 @@ int	intlen(int nb)
 	int	len;
 
 	len = 0;
-	while (nb > 0)
+	if (nb <= 0)
+		len++;
+	while (nb)
 	{
 		nb = nb / 10;
 		len++;
@@ -29,26 +31,25 @@ char	*ft_itoa(int n)
 {
 	int		len;
 	char	*str;
-	char	sign;
+	long	nb;
 
-	sign = 'p';
-	if (n < 0)
-	{
-		n *= -1;
-		sign = 'n';
-	}
+	nb = n;
 	len = intlen(n);
-	if (sign == 'n')
-		len = len + 1;
 	str = malloc(len + 1);
-	str[0] = '-';
+	if (!str)
+		return (NULL);
 	str[len] = '\0';
-	if (n == 0)
+	if (nb == 0)
 		str[0] = '0';
-	while (n > 0 && len-- >= 0)
+	if (nb < 0)
 	{
-		str[len] = (n % 10) + '0';
-		n = n / 10;
+		str[0] = '-';
+		nb = -nb;
+	}
+	while (nb > 0 && len-- >= 0)
+	{
+		str[len] = (nb % 10) + '0';
+		nb = nb / 10;
 	}
 	return (str);
 }
