@@ -27,7 +27,7 @@ int	intlen(int nb)
 
 char	*ft_itoa(int n)
 {
-	size_t	len;
+	int		len;
 	char	*str;
 	char	sign;
 
