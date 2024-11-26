@@ -6,7 +6,7 @@
 /*   By: hounajar <hounajar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 15:20:49 by hounajar          #+#    #+#             */
-/*   Updated: 2024/11/22 20:22:16 by hounajar         ###   ########.fr       */
+/*   Updated: 2024/11/26 04:24:47 by hounajar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <string.h>
-# include <stdio.h>
 # include <unistd.h>
 # include <stdint.h>
 
