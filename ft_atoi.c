@@ -6,12 +6,11 @@
 /*   By: hounajar <hounajar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 15:02:27 by hounajar          #+#    #+#             */
-/*   Updated: 2024/11/19 17:42:41 by hounajar         ###   ########.fr       */
+/*   Updated: 2024/11/26 11:26:29 by hounajar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_atoi(const char *nptr)
 {
