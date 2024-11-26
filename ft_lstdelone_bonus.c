@@ -6,7 +6,7 @@
 /*   By: hounajar <hounajar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 05:42:21 by hounajar          #+#    #+#             */
-/*   Updated: 2024/11/22 08:54:26 by hounajar         ###   ########.fr       */
+/*   Updated: 2024/11/25 22:53:18 by hounajar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	if (lst != NULL)
-	{
-		del(lst->content);
-		free(lst);
-	}
+	if (!lst || !del)
+		return ;
+	del(lst->content);
+	free(lst);
 }

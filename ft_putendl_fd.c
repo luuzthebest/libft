@@ -6,7 +6,7 @@
 /*   By: hounajar <hounajar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 23:56:46 by hounajar          #+#    #+#             */
-/*   Updated: 2024/11/21 17:01:22 by hounajar         ###   ########.fr       */
+/*   Updated: 2024/11/25 23:04:20 by hounajar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	while (*s)
-	{
-		write(fd, s, 1);
-		s++;
-	}
+	if (!s || fd < 0)
+		return ;
+	ft_putstr_fd(s, fd);
 	write(fd, "\n", 1);
 }

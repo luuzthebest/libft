@@ -6,13 +6,13 @@
 /*   By: hounajar <hounajar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 18:03:55 by hounajar          #+#    #+#             */
-/*   Updated: 2024/11/22 05:26:11 by hounajar         ###   ########.fr       */
+/*   Updated: 2024/11/25 22:48:11 by hounajar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	intlen(int nb)
+static	int	intlen(int nb)
 {
 	int	len;
 

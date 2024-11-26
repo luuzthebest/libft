@@ -6,7 +6,7 @@
 /*   By: hounajar <hounajar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 06:44:01 by hounajar          #+#    #+#             */
-/*   Updated: 2024/11/22 09:19:28 by hounajar         ###   ########.fr       */
+/*   Updated: 2024/11/25 22:51:41 by hounajar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,12 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*temp;
 
-	if (*lst == NULL)
+	if (!lst || !del)
 		return ;
 	while (*lst != NULL)
 	{
 		temp = (*lst)->next;
-		del((*lst)->content);
-		free(*lst);
+		ft_lstdelone(*lst, del);
 		*lst = temp;
 	}
 	*lst = NULL;

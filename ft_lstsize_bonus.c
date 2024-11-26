@@ -6,7 +6,7 @@
 /*   By: hounajar <hounajar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 21:10:27 by hounajar          #+#    #+#             */
-/*   Updated: 2024/11/21 21:22:58 by hounajar         ###   ########.fr       */
+/*   Updated: 2024/11/25 22:58:15 by hounajar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ int	ft_lstsize(t_list *lst)
 	int		len;
 
 	len = 0;
-	if (lst == NULL)
-		return (0);
 	p = lst;
 	while (p != NULL)
 	{

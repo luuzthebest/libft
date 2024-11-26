@@ -6,7 +6,7 @@
 /*   By: hounajar <hounajar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 08:43:03 by hounajar          #+#    #+#             */
-/*   Updated: 2024/11/22 09:18:38 by hounajar         ###   ########.fr       */
+/*   Updated: 2024/11/25 22:50:04 by hounajar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	t_list	*nxt;
 
-	nxt = lst;
-	if (lst == NULL)
+	if (!lst || !f)
 		return ;
+	nxt = lst;
 	while (nxt != NULL)
 	{
 		f(nxt->content);
