@@ -6,7 +6,7 @@
 /*   By: hounajar <hounajar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 00:58:00 by hounajar          #+#    #+#             */
-/*   Updated: 2024/11/19 14:42:29 by hounajar         ###   ########.fr       */
+/*   Updated: 2024/11/26 08:39:39 by hounajar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	j;
 
 	i = 0;
-	if (*little == '\0')
+	if (!*little)
 		return ((char *)big);
 	while (big[i] && i < len)
 	{
