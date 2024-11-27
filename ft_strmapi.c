@@ -6,7 +6,7 @@
 /*   By: hounajar <hounajar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 17:14:56 by hounajar          #+#    #+#             */
-/*   Updated: 2024/11/20 18:56:58 by hounajar         ###   ########.fr       */
+/*   Updated: 2024/11/27 14:34:45 by hounajar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	if (!s || !f)
 		return (ft_strdup(""));
-	mapped = malloc(strlen(s)+1);
+	mapped = malloc(ft_strlen(s)+1);
 	if (mapped == NULL)
 		return (NULL);
 	while (s[i])
