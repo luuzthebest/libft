@@ -3,69 +3,77 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hounajar <hounajar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lvvz <lvvz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 20:21:19 by hounajar          #+#    #+#             */
-/*   Updated: 2024/11/26 01:30:36 by hounajar         ###   ########.fr       */
+/*   Updated: 2025/04/20 15:48:14 by lvvz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	cw(char *str, int counter, char c)
+int	cwords(char *s)
 {
-	while (*str)
+	int	i;
+	int	c;
+
+	i = 0;
+	c = 1;
+	while (s[i])
 	{
-		if (*str != c)
+		if (s[i] == ' ' || s[i] == '\t')
 		{
-			counter++;
-			while (*str && *str != c)
-				str++;
+			while (s[i] == ' ' || s[i] == '\t')
+				i++;
+			c += !(!s[i]);
 		}
-		else
-		{
-			str++;
-		}
+		i++;
 	}
-	return (counter);
+	return (c);
 }
 
-static void	*ft_clear(char **arr, int allocated)
+char	*all_word(char **s)
 {
-	int	j;
+	char	*res;
+	char	*word;
+	int		i;
 
-	j = 0;
-	while (j < allocated)
-		free (arr[j++]);
-	free (arr);
-	return (NULL);
+	i = 0;
+	while (**s == ' ' || **s == '\t')
+		*s += 1;
+	word = *s;
+	while ((word[i] != ' ' && word[i] != '\t') && word[i])
+		i++;
+	res = malloc(i + 1);
+	i = 0;
+	while ((**s != ' ' && **s != '\t') && **s)
+	{
+		res[i] = **s;
+		*s += 1;
+		i++;
+	}
+	res[i] = '\0';
+	return (res);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char *s)
 {
 	char	**arr;
-	int		ai;
-	int		len;
+	int		w;
+	int		a;
 
-	ai = 0;
-	if (!s)
+	while (*s == ' ' || *s == '\t')
+		s++;
+	if (!*s)
 		return (NULL);
-	arr = (char **)ft_calloc((cw((char *)s, 0, c) + 1), sizeof(char *));
-	if (!arr)
-		return (NULL);
-	while (*s)
+	w = cwords(s);
+	arr = malloc(sizeof(char *) * (w + 1));
+	a = 0;
+	while (a < w)
 	{
-		while (*s && *s == c)
-			s++;
-		if (!*s)
-			return (arr);
-		len = 0;
-		while (s[len] && s[len] != c)
-			len++;
-		arr[ai++] = ft_substr(s, 0, len);
-		if (!arr[ai - 1])
-			return (ft_clear(arr, ai - 1));
-		s += len;
+		arr[a] = all_word(&s);
+		a++;
 	}
+	arr[a] = NULL;
 	return (arr);
 }
